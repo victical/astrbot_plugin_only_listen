@@ -18,9 +18,9 @@ class OnlyListenToMe(Star):
     开启后，非管理员的消息将被拦截，Bot 不会处理。
     """
     
-    def __init__(self, context: Context, config: AstrBotConfig):
+    def __init__(self, context: Context, config: AstrBotConfig = None):
         super().__init__(context)
-        self.config = config
+        self.config = config if config is not None else {}
         
         # 使用规范的插件数据目录
         plugin_data_dir = StarTools.get_data_dir()
