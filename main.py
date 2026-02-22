@@ -22,14 +22,17 @@ class OnlyListenToMe(Star):
         super().__init__(context)
         self.config = config if config is not None else {}
         
-        # 使用规范的插件数据目录
-        plugin_data_dir = StarTools.get_data_dir()
+        # 使用规范的插件数据目录（传入插件名称确保路径稳定）
+        plugin_data_dir = StarTools.get_data_dir("astrbot_plugin_only_listen")
         os.makedirs(plugin_data_dir, exist_ok=True)
         self._data_file = os.path.join(plugin_data_dir, "sleep_groups.json")
         
         # 存储已开启"只听我的"模式的群ID
         # 格式: {group_id: True/False}
         self._sleep_groups: dict[str, bool] = {}
+        
+        # 立即加载数据（不等待 on_astrbot_loaded 钩子）
+        self._load_data()
         
     def _load_data(self) -> None:
         """从 JSON 文件加载数据"""
@@ -59,9 +62,8 @@ class OnlyListenToMe(Star):
     
     @filter.on_astrbot_loaded()
     async def on_loaded(self) -> None:
-        """插件加载完成后初始化数据"""
-        self._load_data()
-        logger.info("[只听我的] 插件初始化完成")
+        """插件加载完成后的日志"""
+        logger.info(f"[只听我的] 插件初始化完成，数据文��: {self._data_file}")
     
     @filter.event_message_type(filter.EventMessageType.GROUP_MESSAGE, priority=sys.maxsize - 1)
     async def on_group_message(self, event: AstrMessageEvent):
