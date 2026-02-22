@@ -1,11 +1,11 @@
 # AstrBot 只听我的插件
 
-<div align="center">
-
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![AstrBot](https://img.shields.io/badge/AstrBot-4.0%2B-orange.svg)](https://github.com/Soulter/AstrBot)
-
+<div style="text-align: center; margin-top: 16px;">
+  <img 
+    src="https://count.getloli.com/@astrbot_plugin_only_listen?theme=moebooru&padding=7&offset=0&align=center&scale=1&pixelated=1&darkmode=auto" 
+    alt="访客计数 — astrbot_plugin_only_listen (萌萌风格)"
+    style="max-width: 200px; height: auto;"
+  />
 </div>
 
 ## 📖 介绍
