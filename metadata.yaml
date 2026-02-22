@@ -1,0 +1,11 @@
+name: astrbot_plugin_only_listen
+display_name: 只听我的
+desc: 控制Bot是否只听管理员的消息，开启后Bot在群聊中只响应管理员
+help: |
+  触发关键词（无需指令前缀，仅管理员可用）：
+  只听我的 / #只听我的 - 开启屏蔽模式，Bot只听管理员消息
+  听大家的 / #听大家的 - 关闭屏蔽模式，Bot恢复响应所有人
+  屏蔽列表 / #屏蔽列表 - 查看已开启屏蔽的群列表
+version: v1.0.0
+author: victical
+repo: https://github.com/victical/astrbot_plugin_only_listen
